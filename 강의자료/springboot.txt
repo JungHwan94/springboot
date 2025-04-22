@@ -1,0 +1,284 @@
+오후 6:29 2025-03-17
+ch10_homepage
+
+java 파일들
+member => member package
+vote => vote package
+DBConnectionMge => db package
+
+webapp
+index.jsp => 대문
+member folder => member에 관련된 jsp
+vote folder => vote에 관련된 jsp
+
+resources/js
+resources/css
+resources/img
+------------------------------------------------
+ch11_ajax
+sevlet
+doGet
+----------------------------------------
+member 1행 얻어올때, 모든행 가져올때
+id, name, gender, email 필드만 javabean에 담아서 가져오기
+
+// AjaxServletController4 코드복붙
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+오후 3:34 2025-03-18
+/ajaxReply/rist.do
+/ajaxReply/rlnsert.bo
+
+
+ch12_el_jstl
+webapp/views/01_EL/01.el.jsp
+webapp/views/01_EL/02.operation.jsp
+src/main/java
+
+url
+tjoeun.or.kr
+
+com.tjoeun.controller
+com.tjoeun.vo
+
+// ServletException
+/operation.do > method, get
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+오전 10:05 2025-03-19
+
+index.jsp
+member/login.jsp
+
+server > 밑에 Modules > Edit | 10/13 >10 homepage => 13
+
+com.mybatis.member.controller	: servlet 파일들
+com.mybatis.member.vo.		: java bean 파일들
+com.mybatis.member.service		: DB의 실행결과 리턴
+com.mybatis.member.dao		: DB와 직접 연결
+
+com.mybatis.board.controller	: servlet 파일들
+com.mybatis.board.vo		: java bean 파일들
+com.mybatis.board.service		: DB의 실행결과 리턴
+com.mybatis.board.dao		: Db와 직접 연결
+
+com.mybatis.common.template	: 마이바티스와 연결 DB의 sqlSession얻어오기
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+오전 10:13 2025-03-20
+Template
+
+
+board
+member
+common / menubar.jsp
+
+<jsp:forward page="WEB-INF/
+
+
+com.mybatis.member.controller.[LoginServlet (mapping: login.me, method: post)	: servlet 파일들
+com.mybatis.member.vo.[Member]		: java bean 파일들
+com.mybatis.member.service	.[MemberService,MemberServicelmpi]	: DB의 실행결과 리턴
+com.mybatis.member.dao.[MemberDao]		: DB와 직접 연결
+
+com.mybatis.board.controller	: servlet 파일들
+com.mybatis.board.vo.[Board,Reply]		: java bean 파일들
+com.mybatis.board.service		: DB의 실행결과 리턴
+com.mybatis.board.dao		: Db와 직접 연결
+
+com.mybatis.common.template	: 마이바티스와 연결 DB의 sqlSession얻어오기
+
+resources/mappers/member-mapper.xml
+
+
+
+
+jsp -> controller(Sevlet) -> service(interface, interface구현체) -> dao(DB의 sql문)
+jsp -> controller(Sevlet) -> service(interface, interface구현체) -> dao(xml호출용도) -> DB sql.xml(sql문)
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+오전 10:11 2025-03-21
+memberEnrollForm.jsp
+
+member.controller/IdCheckServlet.java(idCheck.me,get)
+		/MemberInsertServlet(insert.me.post)
+
+
+파일의 흐름
+jsp -> controller(Sevlet) -> service(interface, interface구현체) -> dao(xml호출용도) -> DB sql.xml(sql문)
+
+class 파일의 package
+com.mybatis.member.controller  			: servlet파일들
+			  .LoginServlet (mapping: login.me  method: post)
+com.mybatis.member.vo		: java bean파일들
+		      .Member
+com.mybatis.member.service		: DB의 실행결과 리턴
+			.MemberService(interface)
+			.MemberServiceImpl(class)	
+com.mybatis.member.dao		: DB와 직접 연결
+		       .MemberDao
+
+com.mybatis.board.controller 	 	: servlet파일들
+com.mybatis.board.vo		: java bean파일들
+		   .Board
+		   .Reply
+com.mybatis.board.service		: DB의 실행결과 리턴
+com.mybatis.board.dao		: DB와 직접 연결
+
+com.mybatis.common.template.Template	: 마이바티스와 연결 DB의 sqlSession얻어오기
+
+views/
+	main.jsp
+	board
+	member
+	common/menubar.jsp
+
+resources/mappers(일반폴더)
+             member-mapper.xml
+
+board.controller/BoardListServlet(list.bo/get)
+
+com.mybatis.common/vo/PageInfo.java
+		/template/Pagination.java
+
+com.mybatis.board.service/BoardService(interface)
+			/BoardServicelmpl
+
+com.mybatis.board.dao/BoardDao
+
+resources.mappers/board-mapper.xml
+
+com.mybatis.board.controller/BoardDetailServlet(detail.bo, get)
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+오전 11:14 2025-03-24
+
+BoardSearchServlet(/search.bo, get)
+ReplyInsertServlet(/rinsert.bo, get)
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+오후 12:17 2025-03-25
+lombok(https://projectlombok.org/download) > 다운 > sts-4.20.1...) 안으로 옮기기
+
+cmd(관리자 권한 실행) > 파일위치 복사 > cd [복붙] - ex)cd C:\DEV\sts-4.20.1.RELEASE > java -jar lombok.jar > )파일  sts-4.20.1... 폴더 선택 > install
+
+enco > java class file에 맨밑에 default encoding 을 UTF-8
+workspace도 UTF- 8 
+spell UTF로 변경
+
+help > eclipse marktplace > web 검색 > 
+eclipse enterprise java and web developer tools 3.31 >
+eclipse json editor and tools > 
+다운로드후 select all
+
+
+
+
+Ex01_javaDI
+언어: java
+Group: com.study
+Description: 의존성 주입
+Package: com.study.springboot
+
+package: multi
+	interface: Printer
+	javaBean: Person
+설정파일: Config.java(class)
+
+Ex02_annotationDI
+
+Ex03_logger
+LoggingRunner 
+ApplicationRunner
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+오전 11:08 2025-03-26
+Ex04_jspSetting
+src/main
+	webapp/WEB-INF/views/test1.jsp
+			     /sub/test2.jsp
+
+6.0
+
+src/main/java/
+	com.study.springboot/controller/MyController
+
+Ex05_jspMybatis
+	webapp/WEB-INF/views/list.jsp
+
+src/main/java/
+	com.study.springboot/controller/BoardController.java
+	com.study.springboot/service/BoardService (interface)
+				/BoardServiceImpl (java)
+	com.study.springboot/domain/Board
+			   /dto/
+domain -> DB의 필드명과 동일 javaBean (3개)
+dto	-> domain의 javaBean과 웹 사이의 필요한 javaBean (5개)	
+
+	com.study.springboot/repository/BoardRepository (BoardDao)
+
+src/main/resources
+		/mybatis (package)/mapper(folder)/Board.xml
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+오전 10:06 2025-03-27
+resources/ logback-spring.xml
+	/ log4jdbc.log4j2.properties
+
+Ex06_security
+springboot/MyController.java
+	  /auth
+		/WebSecurityConfig
+		/CustomFailureHandler
+		
+		interface AuthenticationFailureHandler
+
+WEB-INF/views
+	      /admin/welcome3.jsp
+	      /guest/welcome1.jsp
+	      /member/welcome2.jsp
+	      /security/loginForm.jsp
+
+Ex07_JPA	
+resources/META-INF/persistance.xml
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+오전 10:19 2025-03-28
+exam1/BasicUse
+        /JpaUse1
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+오전 10:15 2025-03-31
+service
+repo
+page<member> findByNameLike <- 
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+오후 12:00 2025-04-01
+Ex13_WebJars
+
+runtimeOnly("org.webjars:jquery:3.7.1")
+runtimeOnly("org.webjars:bootstrap:5.3.3")
+
+controller
+domain/Member
+         /Board
+         /Reply
+
+
+service/MemberService
+repository/MemberRepository[interface]
+config
+
+resources/templates
+		 /board
+		 /fragments
+		 /member
+		 /index.html
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+오전 10:03 2025-04-03
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+오후 12:12 2025-04-04
+dto/UserDto.java
+domain/Member.java
+
+
+
+
+
+
+
+
+
+
+
+

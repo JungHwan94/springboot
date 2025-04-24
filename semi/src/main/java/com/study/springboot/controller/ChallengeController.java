@@ -1,44 +1,42 @@
 package com.study.springboot.controller;
 
-import com.study.springboot.dto.ChallengeParticipationResponse;
 import com.study.springboot.entity.Challenge;
 import com.study.springboot.service.ChallengeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
-@RequestMapping("/api/challenges")
+@RequestMapping("/challenges")
+@CrossOrigin(origins = "http://localhost:3000") // React 클라이언트가 3000번 포트에서 실행되므로 해당 포트를 추가
 public class ChallengeController {
 
-    private final ChallengeService challengeService;
-
-    public ChallengeController(ChallengeService challengeService) {
-        this.challengeService = challengeService;
-    }
+    @Autowired
+    private ChallengeService challengeService;
 
     @GetMapping
-    public List<Challenge> getAll() {
+    public List<Challenge> getAllChallenges() {
         return challengeService.getAllChallenges();
     }
 
-    // ✅ 오늘의 챌린지 목록 요청 처리
-    @GetMapping("/today")
-    public List<ChallengeParticipationResponse> getTodayChallenges(@RequestParam("userId") String userId) {
-        return challengeService.getChallengesForUser(userId);
+    @GetMapping("/{id}")
+    public Challenge getChallengeById(@PathVariable Long id) {
+        return challengeService.getChallengeById(id);
     }
 
-    @PostMapping("/start")
-    public void startChallenge(@RequestBody Map<String, String> payload) {
-        challengeService.startChallenge(payload.get("userId"), payload.get("challengeTitle"));
+    @PostMapping
+    public Challenge createChallenge(@RequestBody Challenge challenge) {
+        return challengeService.createChallenge(challenge);
     }
 
-    @PostMapping("/complete")
-    public void completeChallenge(@RequestBody Map<String, Object> payload) {
-        String userId = (String) payload.get("userId");
-        String challengeTitle = (String) payload.get("challengeTitle");
-        int earnedPoints = (int) payload.get("earnedPoints");
-        challengeService.completeChallenge(userId, challengeTitle, earnedPoints);
+    @DeleteMapping("/{id}")
+    public void deleteChallenge(@PathVariable Long id) {
+        challengeService.deleteChallenge(id);
+    }
+
+    @GetMapping("/category/{category}")
+    public List<Challenge> getChallengesByCategory(@PathVariable String category) {
+        return challengeService.getChallengesByCategory(category);
     }
 }
